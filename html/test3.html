@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <style>
+        @media screen and (max-width: 299px){
+            .box{
+                width: 100%;
+                height: 100%;
+                background: blue;
+                text-align: center;
+                font-size: 1rem;
+                color: #fff; word-wrap:break-word;
+            }
+            .box img{
+                width: 100%;
+            }
+        }
+        @media (min-width: 300px) and (max-width: 364px){
+            .box{
+                width: 100%;
+                height: 100%;
+                background: #000;
+                text-align: center;
+                font-size: 2rem;
+                color: #fff; word-wrap:break-word;
+            }
+        }
+        @media (min-width: 365px) and (max-width: 599px){
+            .box{
+                width: 100%;
+                height: 100%;
+                background: #333;
+                text-align: center;
+                font-size: 3rem;
+                color: #fff; word-wrap:break-word;
+            }
+        }
+        @media (min-width: 600px) and (max-width: 799px){
+            .box{
+                width: 100%;
+                height: 100%;
+                background: #666;
+                text-align: center;
+                font-size: 4rem;
+                color: #fff; word-wrap:break-word;
+            }
+        }
+        @media (min-width: 800px) and (max-width: 1099px){
+            .box{
+                width: 100%;
+                height: 100%;
+                background: green;
+                text-align: center;
+                font-size: 6rem;
+                color: #fff; word-wrap:break-word;
+            }
+        }
+        @media (min-width: 1100px) and (max-width: 1199px){
+            .box{
+                width: 100%;
+                height: 100%;
+                background: yellow;
+                text-align: center;
+                font-size: 8rem;
+                color: #fff; word-wrap:break-word;
+            }
+        }
+        @media screen and (min-width: 1200px){
+            .box{
+                width: 100%;
+                height: 100%;
+                background: red;
+                text-align: center;
+                font-size: 10rem;
+                color: #fff; word-wrap:break-word;transform:scale(1.1);
+            }
+        }
+        /*.box{*/
+            /*width:100px;*/
+            /*height: 100px;*/
+            /*margin: 400px auto;*/
+            /*border: 1px solid #eee;*/
+        /*}*/
+        /*.box span{*/
+            /*display: block;*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*margin: 200px;*/
+        /*}*/
+        /*.box span img{*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+        /*}*/
+        /*.box span img:hover{*/
+            /*transform:scale(1.5);!**放大**!*/
+            /*transition:transform 0.3s 0s;*/
+        /*}*/
+        #div
+        {
+            width:100px;
+            height:100px;
+            background:yellow;
+            transition:width 2s, height 2s;
+            -moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+            -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+            -o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+        }
+
+        #div:hover
+        {
+            width:600px;
+            height:600px;
+            transform:rotate(360deg);/* 旋转*/
+            -moz-transform:rotate(360deg); /* Firefox 4 */
+            -webkit-transform:rotate(360deg); /* Safari and Chrome */
+            -o-transform:rotate(360deg); /* Opera */
+        }
+
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $.ajax({
+            url:"https://zhidao.baidu.com/shop/category?cid=32",
+            type:'get',
+            dataType:'JSONP',
+            success: function(data){
+                console.log(data)
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="box container">
+        <!--<img src="../images/logo.png">-->
+        <!--<span><img src="../images/logo.png"></span>-->
+        <!--<span><img src="../images/logo.png"></span>-->
+        <!--<span><img src="../images/logo.png"></span>-->
+        <!--<span><img src="../images/logo.png"></span>-->
+        <!--<span><img src="../images/logo.png"></span>-->
+
+        <!--<div id="div">请把鼠标指针放到黄色的 div 元素上，来查看过渡效果。</div>-->
+        dsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdgdsdjklllllllllllllllllllllllllllllllllkdjfdg
+    </div>
+</body>
+</html>

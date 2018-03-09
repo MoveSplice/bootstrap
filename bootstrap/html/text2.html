@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        *{margin:0;padding:0;list-style-type:none;}
+        body{font:12px/180% Arial, Helvetica, sans-serif, "宋体";color:#333;background:#f0f0f0;}
+        a,img{border:0;}
+        /* demo */
+        .demo{width:780px;margin:0 auto;}
+        .demo h2{height:70px;line-height:50px;font-size:22px;font-weight:normal;font-family:"Microsoft YaHei",SimHei;text-align:center;}
+        /* focus */
+        #focus{position:relative;width:780px;height:420px;overflow:hidden;}
+        #focus ul{height:420px;position:absolute;}
+        #focus ul li{float:left;width:780px;height:420px;overflow:hidden;position:relative;background:#000;}
+        #focus ul li div{position:absolute;overflow:hidden;}
+        #focus .btnBg{position:absolute;width:780px;height:40px;left:0;bottom:0;background:#000;}
+        #focus .btn{position:absolute;height:30px;left:10px;bottom:4px;}
+        #focus .btn span{
+            float:left;display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;font-size:16px;margin-right:10px;cursor:pointer;background:#716564;color:#ffffff;
+            border-radius:15px;
+            -moz-border-radius:15px;
+            -webkit-border-radius:15px;
+        }
+        #focus .btn span.on{background:#B91919;color:#ffffff;}
+    </style>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var sWidth = $("#focus").width();
+            var len = $("#focus ul li").length;
+            var index = 0;
+            var picTimer;
+
+            var btn = "<div class='btnBg'></div><div class='btn'>";
+            for(var i=0; i < len; i++){
+                btn += "<span>" + (i+1) + "</span>";
+            }
+            btn += "</div>";
+            $("#focus").append(btn);
+            $("#focus .btnBg").css("opacity",0.3);
+
+
+            $("#focus .btn span").mouseenter(function(){
+                index = $("#focus .btn span").index(this);
+                showPics(index);
+            }).eq(0).trigger("mouseenter");
+
+
+            $("#focus ul").css("width",sWidth * (len + 1));
+
+
+            $("#focus ul li div").hover(function(){
+                $(this).siblings().css("opacity",0.7);
+            },function() {
+                $("#focus ul li div").css("opacity",1);
+            });
+
+
+            $("#focus").hover(function(){
+                clearInterval(picTimer);
+            },function(){
+                picTimer = setInterval(function(){
+                    if(index == len){
+                        showFirPic();
+                        index = 0;
+                    }else{
+                        showPics(index);
+                    }
+                    index++;
+                },3000);
+            }).trigger("mouseleave");
+
+
+            function showPics(index){
+                var nowLeft = -index*sWidth;
+                $("#focus ul").stop(true,false).animate({"left":nowLeft},500);
+                $("#focus .btn span").removeClass("on").eq(index).addClass("on");
+            }
+
+            function showFirPic(){
+                $("#focus ul").append($("#focus ul li:first").clone());
+                var nowLeft = -len*sWidth;
+                $("#focus ul").stop(true,false).animate({"left":nowLeft},500,function(){
+
+                    $("#focus ul").css("left","0");
+                    $("#focus ul li:last").remove();
+                });
+                $("#focus .btn span").removeClass("on").eq(0).addClass("on");
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+
+
+<div class="demo">
+    <h2>多格焦点图滚动切换</h2>
+    <div id="focus">
+        <ul>
+            <li>
+                <div style="left:0;top:0;"><a href="#"><img width="780" height="420" src="../images/1.jpg"  /></a></div>
+            </li>
+            <li>
+                <div style="left:0;top:0;"><a href="#"><img width="780" height="420" src="../images/2.jpg" /></a></div>
+            </li>
+            <li>
+                <div style="right:0;top:0;"><a href="#"><img width="780" height="420" src="../images/3.jpg"  /></a></div>
+            </li>
+            <li>
+                <div style="right:0;top:140px;"><a href="#"><img width="780" height="420" src="../images/pic3.png"  /></a></div>
+            </li>
+            <li>
+                <div style="right:0;bottom:0;"><a href="#"><img width="780" height="420" src="../images/pic2.png"  /></a></div>
+            </li>
+            </li-->
+
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

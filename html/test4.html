@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <style>
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        .ul{
+            height: 400px;
+            position: relative;
+            width: 100%;
+        }
+        .ul li:nth-child(1){
+            height: 400px;
+            background: url("https://www.74bee.com/new/images/index_logo.png") center center no-repeat;
+            /*display: none;*/
+
+        }
+        .ul li:nth-child(2){
+            height: 400px;
+            background: url("https://www.74bee.com/new/images/index1_logo.png") center center no-repeat;
+            display: none;
+        }
+        .ul li:nth-child(3){
+            height: 400px;
+            background: url("https://www.74bee.com/new/images/2.jpg") center center no-repeat;
+            display: none
+        }
+        .hah{
+            display: list-item
+        }
+
+    </style>
+    <script>
+        $(function(){
+            var timer = null;
+            var i = 0;
+            i = $(this).index();
+            timer = setInterval(function(){
+                i++;
+                if(i>3){
+                    i=-1;
+                    i++;
+                }
+                console.log(i);
+                $(".ul li").attr('class','hah').siblings('li').attr('class','');
+                $('.ul li').eq(i).show().siblings('li').hide();
+            },1000);
+            $(".ul li").mouseover(function(){
+                clearInterval(timer);
+                console.log("1111")
+            });
+            $(".ul li").mouseout(function(){
+                timer = setInterval(function(){
+                    i++;
+                    if(i>3){
+                        i=-1;
+                        i++;
+                    }
+                    console.log("2222");
+                    $(".ul li").attr('class','hah').siblings('li').attr('class','');
+                    $('.ul li').eq(i).show().siblings('li').hide();
+                },1000);
+            })
+
+        });
+
+    </script>
+</head>
+<body>
+    <div class="container-fluid" style="padding: 0;margin: 0;">
+        <ul class="ul">
+            <li class="img-responsive"></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!--<ul>-->
+            <!--<li><img  class="img-responsive" src="https://www.74bee.com/new/images/index_logo.png"></li>-->
+            <!--<li></li>-->
+            <!--<li></li>-->
+        <!--</ul>-->
+    </div>
+</body>
+</html>
