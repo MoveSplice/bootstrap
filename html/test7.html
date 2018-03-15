@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+
+    <style>
+        .form-span1{
+            color:red;
+
+        }
+        .form-span2{
+            color:red;
+
+        }
+        #te{
+            max-height: 200px;
+            max-width: 200px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <script>
+        $(function(){
+            $("#form-text1").blur(function(){
+                var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}$/
+                if($("#form-text1").val()!==reg||$("#form-text1").val()==''){
+                    $(".form-span1").html("邮箱不能为空或者邮箱不正确")
+                }else{
+                    $(".form-span1").html("")
+                }
+
+            });
+            $("#form-text2").blur(function(){
+                var reg = /^1[3|4|5|7|8][0-9]{9}$/;
+                if($("#form-text2").val()!==reg){
+                    $(".form-span2").html("必须是11位的手机号码")
+                }else{
+                    $(".form-span2").html("")
+                }
+
+            });
+
+        })
+    </script>
+<form>
+    <div>头像:<input type="file"></div>
+    <div>账号:<input type="text" id="form-text1" placeholder="请输入正确的电子邮箱" value=""> <span class="form-span1"></span></div>
+    <div>手机:<input type="text" id="form-text2" placeholder="请输入正确的手机号码" value=""> <span class="form-span2"></span></div>
+</form>
+<textarea id="te">
+
+</textarea>
+
+</body>
+</html>

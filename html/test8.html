@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script src="common.js"></script>
+    <script></script>
+    <script src="https://hm.baidu.com/hm.js?02d6fe6e6e4acce5c8d372b5b6e4ef18"></script>
+    <script async="" src="//s.btc.com/common/js/google-analytics/20170908/analytics.js"></script>
+    <script>
+        var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?02d6fe6e6e4acce5c8d372b5b6e4ef18";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
+
+    </script>
+    <script>
+        var globals = {
+            chartWidth: 330,
+            chartHeight: 240,
+            pools: [
+                {"n":"124",
+                    "p":0.26898047722343,
+                    "name":"BTC.com",
+                    "id":"55",
+                    "hash_share":6.6652264305995e+18,
+                    "count":"124"
+                },
+                {"n":"74",
+                    "p":0.16052060737527,
+                    "name":"AntPool",
+                    "id":"29",
+                    "hash_share":3.9776351279384e+18,
+                    "count":"74"
+                },
+                {"n":"56",
+                    "p":0.12147505422993,
+                    "name":"SlushPool",
+                    "id":"7",
+                    "hash_share":3.0101022589804e+18,
+                    "count":"56"
+                },
+                {"n":"48",
+                    "p":0.10412147505423,
+                    "name":"ViaBTC",
+                    "id":"54",
+                    "hash_share":2.5800876505546e+18,
+                    "count":"48"
+                },
+                {"n":"37",
+                    "p":0.080260303687636,
+                    "name":"BTC.TOP",
+                    "id":"59",
+                    "hash_share":1.9888175639692e+18,
+                    "count":"37"
+                },
+                {"n":"26",
+                    "p":0.056399132321041,
+                    "name":"F2Pool",
+                    "id":"22",
+                    "hash_share":1.3975474773838e+18,
+                    "count":"26"
+                },
+                {"n":"19",
+                    "p":0.041214750542299,
+                    "name":"BTCC",
+                    "id":"38",
+                    "hash_share":1.0212846950112e+18,
+                    "count":"19"
+                },
+                {"n":"10",
+                    "p":0.021691973969631,
+                    "name":"BitClub",
+                    "id":"36",
+                    "hash_share":5.3751826053222e+17,
+                    "count":"10"
+                },
+                {"n":"7",
+                    "p":0.015184381778742,
+                    "name":"BitFury",
+                    "id":"41",
+                    "hash_share":3.7626278237255e+17,
+                    "count":"7"
+                },
+                {"n":"7",
+                    "p":0.015184381778742,
+                    "name":"CanoePool",
+                    "id":"64",
+                    "hash_share":3.7626278237255e+17,
+                    "count":"7"
+                },
+                {"n":"5",
+                    "p":0.010845986984816,
+                    "name":"58COIN",
+                    "id":"69",
+                    "hash_share":2.6875913026611e+17,
+                    "count":"5"
+                },
+                {"n":"5","p":0.010845986984816,
+                    "name":"Bitcoin.com",
+                    "id":"57","hash_share":2.6875913026611e+17,
+                    "count":"5"
+                },
+                {"n":"5","p":0.010845986984816,
+                    "name":"Easy2Mine","id":"79",
+                    "hash_share":2.6875913026611e+17,
+                    "count":"5"
+                },
+                {"n":"5","p":0.010845986984816,
+                    "name":"GBMiners",
+                    "id":"56",
+                    "hash_share":2.6875913026611e+17,
+                    "count":"5"
+                },
+                {"n":"4","p":0.0086767895878525,
+                    "name":"BW.COM",
+                    "id":"39","hash_share":2.1500730421289e+17,
+                    "count":"4"
+                },
+                {"n":"3","p":0.0065075921908894,
+                    "name":"KanoPool",
+                    "id":"33","hash_share":1.6125547815967e+17,
+                    "count":"3"
+                },
+                {"n":"1","p":0.0021691973969631,
+                    "name":"BTPOOL",
+                    "id":"68",
+                    "hash_share":5.3751826053222e+16,
+                    "count":"1"
+                }
+                    ],
+            poolHistoryData: {
+                poolPercentHistory: {
+                    "BTC.com":[
+                        "0.0440",
+                        "0.0426",
+                        "0.0647",
+                        "0.0767",
+                        "0.0819",
+                        "0.1173",
+                        "0.1158",
+                        "0.1142",
+                        "0.1438",
+                        "0.1708",
+                        "0.2204",
+                        "0.2598"
+                    ],
+                    "AntPool":
+                        [
+                            "0.1576",
+                            "0.1654",
+                            "0.1655",
+                            "0.1673",
+                            "0.2120",
+                            "0.1825",
+                            "0.1580",
+                            "0.1922",
+                            "0.1742",
+                            "0.1770",
+                            "0.1899",
+                            "0.1536"
+                        ],
+                    "BTC.TOP":
+                        [
+                            "0.0622",
+                            "0.0840",
+                            "0.0993",
+                            "0.1416",
+                            "0.1257",
+                            "0.1217",
+                            "0.1341",
+                            "0.1283",
+                            "0.1296",
+                            "0.1326",
+                            "0.1314",
+                            "0.1183"
+                        ],
+                    "ViaBTC":
+                        [
+                            "0.0697",
+                            "0.0408",
+                            "0.0544",
+                            "0.0470",
+                            "0.0497",
+                            "0.0558",
+                            "0.1007",
+                            "0.1007",
+                            "0.1360",
+                            "0.1229",
+                            "0.1175",
+                            "0.1183"
+                        ],
+                    "Other":
+                        [
+                            "0.2742",
+                            "0.2796",
+                            "0.2649",
+                            "0.2603",
+                            "0.2668",
+                            "0.2229",
+                            "0.1905",
+                            "0.1622",
+                            "0.1359",
+                            "0.1238",
+                            "0.1011",
+                            "0.1106"
+                        ],
+                    "SlushPool":
+                        [
+                            "0.0648",
+                            "0.0570",
+                            "0.0515",
+                            "0.0485",
+                            "0.0426",
+                            "0.0542",
+                            "0.0560",
+                            "0.0679",
+                            "0.0928",
+                            "0.1076",
+                            "0.1052",
+                            "0.1041"
+                        ],
+                    "F2Pool":
+                        [
+                            "0.1190",
+                            "0.1066",
+                            "0.0958",
+                            "0.0962",
+                            "0.0784",
+                            "0.0790",
+                            "0.0873",
+                            "0.0907",
+                            "0.0809",
+                            "0.0783",
+                            "0.0548",
+                            "0.0490"
+                        ],
+                    "BTCC":
+                        [
+                            "0.0708",
+                            "0.0904",
+                            "0.0839",
+                            "0.0749",
+                            "0.0755",
+                            "0.0726",
+                            "0.0737",
+                            "0.0702",
+                            "0.0444",
+                            "0.0296",
+                            "0.0241",
+                            "0.0380"
+                        ],
+                    "BitClub":
+                        [
+                            "0.0300",
+                            "0.0324",
+                            "0.0359",
+                            "0.0349",
+                            "0.0334",
+                            "0.0427",
+                            "0.0404",
+                            "0.0340",
+                            "0.0281",
+                            "0.0300",
+                            "0.0239",
+                            "0.0181"
+                        ],
+                    "BitFury":
+                        [
+                            "0.1077",
+                            "0.1012",
+                            "0.0841",
+                            "0.0526",
+                            "0.0340",
+                            "0.0513",
+                            "0.0435",
+                            "0.0396",
+                            "0.0343",
+                            "0.0274",
+                            "0.0202",
+                            "0.0169"
+                        ],
+                    "KanoPool":
+                        [
+                            "0.1077",
+                            "0.1012",
+                            "0.0841",
+                            "0.0526",
+                            "0.0340",
+                            "0.0513",
+                            "0.0635",
+                            "0.0396",
+                            "0.0743",
+                            "0.0274",
+                            "0.0702",
+                            "0.0169"
+                        ],
+                    "BTPOOL":
+                        [
+                            "0.1077",
+                            "0.1412",
+                            "0.0841",
+                            "0.0526",
+                            "0.0340",
+                            "0.0513",
+                            "0.0435",
+                            "0.2396",
+                            "0.0343",
+                            "0.0274",
+                            "0.1202",
+                            "0.0169"
+                        ],
+                    "58COIN":
+                        [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            "0.0115",
+                            "0.0133"
+                        ]
+                },
+                start: "20170301",
+                end: "20180201"
+            },
+            bipData: []
+        };
+        $(function() {
+            var pieOpts = {
+                credits: {
+                    enabled: false
+                },
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie',
+                },
+                title: {
+                    text: ''
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        depth: 35,
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: null
+            }
+
+            var dataSource = [];
+            for (let pool of globals.pools) {
+                dataSource.push({
+                    name: pool.name,
+                    y: pool.p
+                });
+            }
+            var series = [{
+                name: "百分比",
+                colorByPoint: true,
+                data: dataSource
+            }];
+
+            $('.pool-panel-percentage-pie-chart-inner').highcharts($.extend({}, pieOpts, { series: series }));
+
+
+
+
+        })
+    </script>
+    <script>
+
+
+    </script>
+    <style>
+        body{
+            font-family: Roboto, "Helvetica Neue", Helvetica, "Hiragino Sans GB", STHeitiSC-Light, "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857;
+            color: rgb(51, 51, 51);
+            background-color: rgb(255, 255, 255);
+        }
+        .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+        }
+        .pool-panel-share-table th, .pool-panel-share-table td{
+            text-align: right;
+        }
+        .table{
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        table{
+            background-color: transparent;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        tbody{
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        tr{
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+        .pool-panel-interval{
+            margin-bottom: 15px;
+        }
+        .pool-panel-interval ul{
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .pool-panel-interval li{
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel-body">
+        <div class="pool-panel pool-panel-share">
+
+            <div>
+                <div class="pool-panel-percentage-pie-chart-inner" style="min-width: 250px; height: 400px; margin: 0 auto;" data-highcharts-chart="0">
+                    <div class="highcharts-container"></div>
+                </div>
+            </div>
+            <div style="height: 10px;"></div>
+            <table class="table table-hover pool-panel-share-table">
+                <tbody>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>矿池</th>
+                    <th>算力占比</th>
+                    <th>算力</th>
+                    <th>块数量</th>
+                    <th>空块数量</th>
+                    <th>空块占比</th>
+                    <th>平均块大小</th>
+                    <th>平均块矿工费  </th>
+                    <th>矿工费与块奖励占比</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>
+                        NETWORK
+                    </td>
+                    <td>100.00 %</td>
+                    <td>
+                        24.70
+                        EH/s
+                    </td>
+                    <td>460</td>
+                    <td>3 </td>
+                    <td>0.65 %</td>
+                    <td>843,008</td>
+                    <td>0.28911421</td>
+                    <td>2.31%</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>BTC.com</td>
+                    <td>26.74 %</td>
+                    <td>
+                        6.60
+                        EH/s
+                    </td>
+                    <td>123</td>
+                    <td>1 </td>
+                    <td>0.81 %</td>
+                    <td>831,655</td>
+                    <td>0.30337569</td>
+                    <td>2.43 %</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>AntPool</td>
+                    <td>15.87 %</td>
+                    <td>
+                        3.92
+                        EH/s
+                    </td>
+                    <td>73</td>
+                    <td>1 </td>
+                    <td>1.37 %</td>
+                    <td>777,754</td>
+                    <td>0.30216236</td>
+                    <td>2.42 %</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>SlushPool</td>
+                    <td>12.17 %</td>
+                    <td>
+                        3.01
+                        EH/s
+                    </td>
+                    <td>56</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>899,977</td>
+                    <td>0.30009592</td>
+                    <td>2.40 %</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>ViaBTC</td>
+                    <td>10.22 %</td>
+                    <td>
+                        2.52
+                        EH/s
+                    </td>
+                    <td>47</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>911,576</td>
+                    <td>0.22764879</td>
+                    <td>1.82 %</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>BTC.TOP</td>
+                    <td>8.04 %</td>
+                    <td>
+                        1.99
+                        EH/s
+                    </td>
+                    <td>37</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>907,284</td>
+                    <td>0.30600839</td>
+                    <td>2.45 %</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>F2Pool</td>
+                    <td>5.65 %</td>
+                    <td>
+                        1.40
+                        EH/s
+                    </td>
+                    <td>26</td>
+                    <td>1 </td>
+                    <td>3.85 %</td>
+                    <td>777,074</td>
+                    <td>0.22285723</td>
+                    <td>1.78 %</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>BTCC</td>
+                    <td>4.12 %</td>
+                    <td>
+                        1.02
+                        EH/s
+                    </td>
+                    <td>19</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>895,969</td>
+                    <td>0.37089002</td>
+                    <td>2.97 %</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>BitClub</td>
+                    <td>2.17 %</td>
+                    <td>
+                        537.52
+                        PH/s
+                    </td>
+                    <td>10</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>973,110</td>
+                    <td>0.40364653</td>
+                    <td>3.23 %</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>BitFury</td>
+                    <td>1.52 %</td>
+                    <td>
+                        376.26
+                        PH/s
+                    </td>
+                    <td>7</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>493,551</td>
+                    <td>0.26501946</td>
+                    <td>2.12 %</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>CanoePool</td>
+                    <td>1.52 %</td>
+                    <td>
+                        376.26
+                        PH/s
+                    </td>
+                    <td>7</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>527,614</td>
+                    <td>0.12815216</td>
+                    <td>1.03 %</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>58COIN</td>
+                    <td>1.08 %</td>
+                    <td>
+                        268.76
+                        PH/s
+                    </td>
+                    <td>5</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>728,895</td>
+                    <td>0.27581463</td>
+                    <td>2.21 %</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Bitcoin.com</td>
+                    <td>1.08 %</td>
+                    <td>
+                        268.76
+                        PH/s
+                    </td>
+                    <td>5</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>480,616</td>
+                    <td>0.32487408</td>
+                    <td>2.60 %</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Easy2Mine</td>
+                    <td>1.08 %</td>
+                    <td>
+                        268.76
+                        PH/s
+                    </td>
+                    <td>5</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>922,814</td>
+                    <td>0.18666216</td>
+                    <td>1.49 %</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>GBMiners</td>
+                    <td>1.08 %</td>
+                    <td>
+                        268.76
+                        PH/s
+                    </td>
+                    <td>5</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>1,061,775</td>
+                    <td>0.40805891</td>
+                    <td>3.26 %</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>BW.COM</td>
+                    <td>0.87 %</td>
+                    <td>
+                        215.01
+                        PH/s
+                    </td>
+                    <td>4</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>702,329</td>
+                    <td>0.09041599</td>
+                    <td><td>0.72 %</td></td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>KanoPool</td>
+                    <td>0.65 %</td>
+                    <td>
+                        161.26
+                        PH/s
+                    </td>
+                    <td>3</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>886,557</td>
+                    <td>0.41178385</td>
+                    <td>3.29 %</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>BTPOOL</td>
+                    <td>0.22 %</td>
+                    <td>
+                        53.75
+                        PH/s
+                    </td>
+                    <td>1</td>
+                    <td>0 </td>
+                    <td>0.00 %</td>
+                    <td>925,239</td>
+                    <td>0.21956695</td>
+                    <td>1.76 %</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="https://s.btc.com/explorer/assets/vendor_096e7cc.js"></script>
+    <script src="https://s.btc.com/explorer/assets/lib/daterangepicker_928a599.js"></script>
+    <script src="https://s.btc.com/explorer/assets/lib/jquery.scrollUp_dbe8e98.js"></script>
+    <script src="https://s.btc.com/explorer/assets/lib/js.cookie_45ca27f.js"></script>
+    <script>
+        function setLanguageCookie(e){Cookies.set("lang",e,{expires:30,path:"/"}),location.reload()}
+    </script>
+    <script>
+
+        function getParameterByName(name, url) {
+            if (!url) {
+                url = window.location.href;
+            }
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        var nr = getParameterByName('nr');
+        if (nr !== null) {
+            Cookies.set('platform', 'pc', { expires: 30, path: '/'});
+        }
+
+        function  setPlatformCookie() {
+            Cookies.set('platform', 'mobile', { expires: 30, path: '/', domain : 'btc.com' });
+            location.reload();
+        }
+
+    </script>
+    <script src="https://s.btc.com/common/js/selfxss/0.0.1/selfxss.min.js"></script>
+    <script>
+        function timeLocalization(){$(".-btc-time-localization").each(function(){{var t=$(this).attr("data-btccom-timestamp"),a="N/A",o="";$(this).attr("data-btccom-time_format")?$(this).attr("data-btccom-time_format"):"YYYY-MM-DD HH:mm:ss"}-1!=t&&(a=moment.unix(t).local().format("YYYY-MM-DD HH:mm:ss"),o=moment.unix(t).utc().format("UTC: YYYY-MM-DD HH:mm:ss")),$(this).html(a),o&&($(this).attr("data-toggle","tooltip"),$(this).attr("title",o))})}$(document).ready(function(){timeLocalization(),$("[data-toggle='tooltip']").tooltip()});
+    </script>
+
+<script>
+    $(function () {
+        function t(t) {
+            return moment.utc(globals.poolHistoryData.start, "YYYYMMDD").add(t, "months").format("YYYY/MM")
+        }
+
+        var e = {
+            chart: {type: "area", height: 500},
+            credits: {enabled: !1},
+            title: {text: null},
+            xAxis: {
+                type: "category", labels: {
+                    formatter: function () {
+                        return t(this.value)
+                    }
+                }
+            },
+            yAxis: {
+                title: {text: "Percent"}, labels: {
+                    formatter: function () {
+                        return this.value + "%"
+                    }
+                }
+            },
+            tooltip: {
+                useHTML: !0, formatter: function () {
+                    for (var e = '<table><caption style="text-align: right">' + t(this.x) + "</caption>", r = 0, a = this.points.length; a > r; r++) e += '<tr><td style="text-align: right; padding-right: 3px; font-weight: 700;">' + this.points[r].series.name + '</td><td style="text-align: right; padding-left: 3px;color: black">', e += this.points[r].y.toFixed(2) + "%</td></tr>";
+                    return e += "</table>"
+                }, crosshairs: [{width: 1, color: "black"}], shared: !0
+            },
+            plotOptions: {
+                area: {
+                    stacking: "percent",
+                    lineColor: "#ffffff",
+                    lineWidth: 1,
+                    marker: {enabled: !1, states: {hover: {enabled: !1}}}
+                }
+            },
+            legend: {align: "right", verticalAlign: "top", layout: "vertical", itemMarginTop: 20},
+            series: null
+        }, r = [];
+        Object.keys(globals.poolHistoryData.poolPercentHistory).forEach(function (t) {
+            r.push({
+                name: t, data: globals.poolHistoryData.poolPercentHistory[t].map(function (t) {
+                    return 100 * t
+                })
+            })
+        }), $(".pool-panel-percentage-chart-inner").highcharts($.extend({}, e, {series: r}))
+    });
+</script>
+<script>
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//s.btc.com/common/js/google-analytics/20170908/analytics.js','ga');
+
+    ga('create', 'UA-66176065-6', 'auto');
+    ga('send', 'pageview');
+
+
+    ga('create', 'UA-66176065-27', 'auto', {name: 'globalGA', cookieName: '_globalGA', allowLinker: true});
+    ga('require', 'linker');
+    ga('require', 'displayfeatures');
+    ga('linker:autoLink', ['btc.com']);
+    ga('globalGA.send', 'pageview');
+
+    $("[ga-type]").each(function(){
+        $(this).click(function () {
+            ga('send', 'event', {
+                eventCategory: $(this).attr("ga-type"),
+                eventAction: $(this).attr("ga-target") ? $(this).attr("ga-target") : fromTarget,
+                eventLabel: $(this).attr("href"),
+                transport: 'beacon'
+            });
+        })
+    })
+
+
+</script>
+</body>
+</html>
