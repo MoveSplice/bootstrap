@@ -3,57 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="jquery.js"></script>
 
     <style>
-        .form-span1{
-            color:red;
-
+        .wrapper{
+            max-width: 1200px;
+            margin: auto;
         }
-        .form-span2{
-            color:red;
-
+        .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+            padding: 8px;
+            line-height: 2.42857143;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+            text-align: left;
         }
-        #te{
-            max-height: 200px;
-            max-width: 200px;
+        table{
+            background-color: transparent;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        tbody{
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        .table{
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        tr{
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
         }
     </style>
 
 </head>
 <body>
+<div class="wrapper">
+    <table class="table table-hover pool-panel-share-table">
+        <tbody>
+        <tr>
+            <th>序号</th>
+            <th>矿池</th>
+            <th>算力占比</th>
+            <th>算力</th>
+            <th>块数量</th>
+            <th>空块数量</th>
+            <th>空块占比</th>
+            <th>平均块大小</th>
+            <th>平均块矿工费  </th>
+            <th>矿工费与块奖励占比</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>
+                NETWORK
+            </td>
+            <td>100.00 %</td>
+            <td>
+                24.70
+                EH/s
+            </td>
+            <td>460</td>
+            <td>3 </td>
+            <td>0.65 %</td>
+            <td>843,008</td>
+            <td>0.28911421</td>
+            <td>2.31%</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>BTC.com</td>
+            <td>26.74 %</td>
+            <td>
+                6.60
+                EH/s
+            </td>
+            <td>123</td>
+            <td>1 </td>
+            <td>0.81 %</td>
+            <td>831,655</td>
+            <td>0.30337569</td>
+            <td>2.43 %</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>AntPool</td>
+            <td>15.87 %</td>
+            <td>
+                3.92
+                EH/s
+            </td>
+            <td>73</td>
+            <td>1 </td>
+            <td>1.37 %</td>
+            <td>777,754</td>
+            <td>0.30216236</td>
+            <td>2.42 %</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>SlushPool</td>
+            <td>12.17 %</td>
+            <td>
+                3.01
+                EH/s
+            </td>
+            <td>56</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>899,977</td>
+            <td>0.30009592</td>
+            <td>2.40 %</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>ViaBTC</td>
+            <td>10.22 %</td>
+            <td>
+                2.52
+                EH/s
+            </td>
+            <td>47</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>911,576</td>
+            <td>0.22764879</td>
+            <td>1.82 %</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>BTC.TOP</td>
+            <td>8.04 %</td>
+            <td>
+                1.99
+                EH/s
+            </td>
+            <td>37</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>907,284</td>
+            <td>0.30600839</td>
+            <td>2.45 %</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>F2Pool</td>
+            <td>5.65 %</td>
+            <td>
+                1.40
+                EH/s
+            </td>
+            <td>26</td>
+            <td>1 </td>
+            <td>3.85 %</td>
+            <td>777,074</td>
+            <td>0.22285723</td>
+            <td>1.78 %</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>BTCC</td>
+            <td>4.12 %</td>
+            <td>
+                1.02
+                EH/s
+            </td>
+            <td>19</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>895,969</td>
+            <td>0.37089002</td>
+            <td>2.97 %</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>BitClub</td>
+            <td>2.17 %</td>
+            <td>
+                537.52
+                PH/s
+            </td>
+            <td>10</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>973,110</td>
+            <td>0.40364653</td>
+            <td>3.23 %</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>BitFury</td>
+            <td>1.52 %</td>
+            <td>
+                376.26
+                PH/s
+            </td>
+            <td>7</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>493,551</td>
+            <td>0.26501946</td>
+            <td>2.12 %</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>CanoePool</td>
+            <td>1.52 %</td>
+            <td>
+                376.26
+                PH/s
+            </td>
+            <td>7</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>527,614</td>
+            <td>0.12815216</td>
+            <td>1.03 %</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>58COIN</td>
+            <td>1.08 %</td>
+            <td>
+                268.76
+                PH/s
+            </td>
+            <td>5</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>728,895</td>
+            <td>0.27581463</td>
+            <td>2.21 %</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Bitcoin.com</td>
+            <td>1.08 %</td>
+            <td>
+                268.76
+                PH/s
+            </td>
+            <td>5</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>480,616</td>
+            <td>0.32487408</td>
+            <td>2.60 %</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Easy2Mine</td>
+            <td>1.08 %</td>
+            <td>
+                268.76
+                PH/s
+            </td>
+            <td>5</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>922,814</td>
+            <td>0.18666216</td>
+            <td>1.49 %</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>GBMiners</td>
+            <td>1.08 %</td>
+            <td>
+                268.76
+                PH/s
+            </td>
+            <td>5</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>1,061,775</td>
+            <td>0.40805891</td>
+            <td>3.26 %</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>BW.COM</td>
+            <td>0.87 %</td>
+            <td>
+                215.01
+                PH/s
+            </td>
+            <td>4</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>702,329</td>
+            <td>0.09041599</td>
+            <td>0.72 %</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>KanoPool</td>
+            <td>0.65 %</td>
+            <td>
+                161.26
+                PH/s
+            </td>
+            <td>3</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>886,557</td>
+            <td>0.41178385</td>
+            <td>3.29 %</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>BTPOOL</td>
+            <td>0.22 %</td>
+            <td>
+                53.75
+                PH/s
+            </td>
+            <td>1</td>
+            <td>0 </td>
+            <td>0.00 %</td>
+            <td>925,239</td>
+            <td>0.21956695</td>
+            <td>1.76 %</td>
+        </tr>
+        </tbody>
+    </table>
 
-    <script>
-        $(function(){
-            $("#form-text1").blur(function(){
-                var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}$/
-                if($("#form-text1").val()!==reg||$("#form-text1").val()==''){
-                    $(".form-span1").html("邮箱不能为空或者邮箱不正确")
-                }else{
-                    $(".form-span1").html("")
-                }
-
-            });
-            $("#form-text2").blur(function(){
-                var reg = /^1[3|4|5|7|8][0-9]{9}$/;
-                if($("#form-text2").val()!==reg){
-                    $(".form-span2").html("必须是11位的手机号码")
-                }else{
-                    $(".form-span2").html("")
-                }
-
-            });
-
-        })
-    </script>
-<form>
-    <div>头像:<input type="file"></div>
-    <div>账号:<input type="text" id="form-text1" placeholder="请输入正确的电子邮箱" value=""> <span class="form-span1"></span></div>
-    <div>手机:<input type="text" id="form-text2" placeholder="请输入正确的手机号码" value=""> <span class="form-span2"></span></div>
-</form>
-<textarea id="te">
-
-</textarea>
+</div>
 
 </body>
 </html>
