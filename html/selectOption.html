@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<script>
+    window.onload=function(){
+       function fun(){
+           var userType='${userType}';
+           if(userType == '1') {
+               var code='${code}';
+               var QState='${QState}';
+               var selectCode=document.getElementById("code");
+               var selectQState=document.getElementById("QState");
+               if(selectCode.length>0){
+                   for(var i=0;i<selectCode.options.length;i++){
+                       if(selectCode.options[i].value==code){
+                           selectCode.options[i].selected=true;
+                           window.location.reload()
+
+                           break;
+                       }
+                   }
+               }
+               if(selectQState.length>0){
+                   for(var i=0;i<selectQState.options.length;i++){
+                       if(selectQState.options[i].value==QState){
+                           selectQState.options[i].selected=true;
+                           window.location.reload()
+                           break;
+                       }
+                   }
+               }
+           }
+       }
+
+    }
+</script>
+<body>
+<select id="zj" onchange="fun()">
+    <option value="">
+        所有
+    </option>
+    <option value="IDCARD">
+    <c:if test="${requestScope.certidType=='IDCARD'}">selected="true"</c:if>>
+    身份证
+    </option>
+    <option value="PASSPORT">
+    <c:if test="${requestScope.certidType=='PASSPORT'}">selected="true"</c:if>>
+    护照
+    </option>
+</select>
+</body>
+</html>
