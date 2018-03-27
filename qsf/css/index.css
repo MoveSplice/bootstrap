@@ -107,7 +107,7 @@ li{
 #qsf-top-body .qsf-top-right li b{
     font-weight: 400;
     display: block;
-    padding: 0 20px 0 10px;
+    padding: 0 10px 0 10px;
     border-bottom: 0;
     height: 30px;
     overflow: hidden;
@@ -306,6 +306,9 @@ li{
     color: #000;
     font-size: 14px;
 }
+.mainnav ul li a:hover{
+    color: #f5004b;
+}
 .mainnav .nav_text_red{
     color: #f5004b;
 }
@@ -313,14 +316,19 @@ li{
     width: 210px;
     height: 450px;
     position: absolute;
-    background: rgba(100,100,100,0.5);
+    background: linear-gradient(to top,#5c0f15,#3fa6cf);
+    opacity:0.8 ;
     top: 40px;
     left: 0;
+    z-index: 9999;
 }
 .lisnav-ul li{
     height: 30px;
     line-height: 30px;
     padding-left: 14px;
+}
+.lisnav-ul li:hover{
+    background: red;
 }
 .lisnav-ul li a{
     color: #fff;
@@ -329,7 +337,9 @@ li{
 .lisnav-ul li span{
     color: #fff;
 }
-
+.lisnav-ul li a:hover{
+    color: #666;
+}
 
 
 .qsf-adnavside{
@@ -366,9 +376,368 @@ li{
     cursor: pointer;
 
 }
+.qsf-pos{
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 250px;
+    height: 450px;
+    z-index: 9999;
+}
+.qsf-news{
+    height: 36px;
+    width: 220px;
+    overflow: hidden;
+    padding: 0 15px;
+    border-bottom: 1px dashed #ccc;
+    background: #fff2f4;
+}
+.qsf-news h2{
+    font-size: 14px;
+    float: left;
+    color: #333;
+    margin-top: 12px;
+    font-weight: 400;
+}
+.qsf-news a {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 13px;
+    color: #888;
+    float: right;
+    display: inline-block;
+    width: 60px;
+}
+.qsf-news a span{
+    padding-left: 5px;
+}
+.qsf_news_content{
+    background: #fff2f4;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border-right: 1px dashed #eee;
+}
+.qsf_news_content span{
+    display: block;
+    width: 220px;
+    height: 26px;
+    font-size: 12px;
+    line-height: 26px;
+}
+.qsf_news_content span a{
+    color: #5e5e5e;
+}
+.icon_server_box{
+    width: 250px;
+    height: 250px;
+    background: #fff2f4;
+
+}
+.icon_server_box .icon_box{
+    padding-left: 15px;
+}
+.icon_server_box .icon_box li{
+    float: left;
+    width: 55px;
+    height: 78px;
+    padding-top: 5px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.icon_server_box .icon_box li span{
+    text-align: center;
+    color:#71716c;
+}
+.icon_server_box .icon_box li:nth-child(1) a i{
+    background: url("../images/11.png") -29px -10px no-repeat;
+    display: block;
+    width: 27px;
+    height: 30px;
+    margin: auto;
+}
+.icon_server_box .icon_box li:nth-child(2) a i{
+    background: url("../images/11.png") -84px -10px no-repeat;
+    display: block;
+    width: 27px;
+    height: 30px;
+    margin: auto;
+}
+
+.icon_server_box .icon_box li:nth-child(3) a i{
+    background: url("../images/11.png") -137px -10px no-repeat;
+    display: block;
+    width: 31px;
+    height: 30px;
+    margin: auto;
+}
+
+.icon_server_box .icon_box li:nth-child(4) a i{
+    background: url("../images/11.png") -195px -10px no-repeat;
+    display: block;
+    width: 31px;
+    height: 30px;
+    margin: auto;
+}
+
+.icon_server_box .icon_box li:nth-child(5) a i{
+    background: url("../images/11.png") -29px -82px no-repeat;
+    display: block;
+    width: 31px;
+    height: 30px;
+    margin: auto;
+}
+
+.icon_server_box .icon_box li:nth-child(6) a i{
+    background: url("../images/11.png") -84px -82px no-repeat;
+    display: block;
+    width: 31px;
+    height: 30px;
+    margin: auto;
+}
+
+.icon_server_box .icon_box li:nth-child(7) a i{
+    background: url("../images/11.png") -137px -82px no-repeat;
+    display: block;
+    width: 31px;
+    height: 30px;
+    margin: auto;
+}
+
+
+.icon_server_box .icon_box li:nth-child(8) a i{
+    background: url("../images/11.png") -195px -82px no-repeat;
+    display: block;
+    width: 31px;
+    height: 30px;
+    margin: auto;
+}
+
+.icon_server_box .icon_box li:nth-child(9) a i{
+    background: url("../images/11.png") -29px -155px no-repeat;
+    display: block;
+    width: 31px;
+    height: 30px;
+    margin: auto;
+}
+
+.icon_server_box .icon_box li:nth-child(10) a i{
+    background: url("../images/11.png") -84px -155px no-repeat;
+    display: block;
+    width: 31px;
+    height: 30px;
+    margin: auto;
+}
+
+.icon_server_box .icon_box li:nth-child(11) a i{
+    background: url("../images/11.png") -137px -155px no-repeat;
+    display: block;
+    width: 31px;
+    height: 30px;
+    margin: auto;
+}
+.icon_server_box .icon_box li:nth-child(12) a i{
+    background: url("../images/11.png") -195px -155px no-repeat;
+    display: block;
+    width: 31px;
+    height: 30px;
+    margin: auto;
+}
+.qsf-kuaixun-img{
+    height: 59px;
+    width: 250px;
+}
+.qsf-kuaixun-img a img{
+    width: 100%;
+    height: 100%;
+}
 
 
 
+
+.carousel{
+    height: 450px;
+
+}
+.carousel img{
+    display: inline-block;
+    width: 100%;
+    height: 450px;
+}
+.brand{
+    position: absolute;
+    width: 200px;
+    right: 0;
+    top: 0;
+    padding: 0 0 11px 10px;
+    overflow: hidden;
+    border-left: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    _padding: 0 0 11px 10px;
+}
+
+.brand-box{
+    width: 200px;
+    margin: 0 0 0 -2px;
+}
+.brand-box a{
+    display: inline-block;
+    width: 100px;
+    height: 35px;
+    float: left;
+    padding: 10px 0;
+    text-align: center;
+}
+.brand-box img{
+    width: 70px;
+    height: 35px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+.qsf-countdown{
+    height: 272px;
+    margin-top: 20px;
+}
+.qsf-countdown-left{
+    width: 950px;
+    height: 272px;
+    float: left;
+    border: 1px solid #eee;
+}
+.qsf-countdown-left .count_box{
+    height: 40px;
+    border: 1px solid #e6e6e6;
+}
+.qsf-countdown-left .count_box::before{
+    display: block;
+    content: "";
+    width: 949px;
+    height: 2px;
+    background: linear-gradient(to right,#ff0028,#f500e7);
+    margin-top: -2px;
+}
+.qsf-countdown-left .count_box .count_box_l{
+    width: 210px;
+    float: left;
+    height: 40px;
+}
+.qsf-countdown-left .count_box .count_box_l a{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(to right,#761c19,#f500e7);
+    border-radius: 50%;
+    color: #fff;
+    line-height: 40px;
+    margin-right: 10px;
+    text-align: center;
+    float: left;
+}
+.qsf-countdown-left .count_box .count_box_l h3{
+    display: inline-block;
+    line-height: 40px;
+    font-size: 18px;
+    color: #f5004b;
+    line-height: 40px;
+    font-weight: 500;
+    float: left;
+}
+.count_r{
+    width: 240px;
+    height: 40px;
+    float: right;
+    line-height: 40px;
+}
+.count_r a{
+    color: #f50056;
+    font-size: 12px;
+}
+.count_r span{
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    background: #f7dfff;
+    float: right;
+    font-size: 16px;
+    color: red;
+    text-align: center;
+}
+
+.count_bob{
+    height: 232px;
+}
+.count_bob li{
+    display: block;
+    float: left;
+    height: 217px;
+    width: 237px;
+    _width: 236px;
+    margin-top: 15px;
+    position: relative;
+}
+.count_bob li a{
+    height: 130px;
+    width: 200px;
+    display: block;
+    line-height: 200px;
+    box-sizing: border-box;
+    border-right: 1px dashed #eee;
+    text-align: center;
+    margin:0 auto;
+}
+.count_bob li img{
+    display: block;
+    height: 120px;
+    width: 120px;
+    margin-left: 25px;
+}
+.count_bob li h3{
+    text-align: center;
+    color: #5e5e5e;
+    font-size: 14px;
+}
+
+.count_bob li p{
+    font-size: 12px;
+    padding: 0 15px;
+    color: #666;
+}
+
+.count_bob_padd{
+    padding: 0 10px;
+}
+.count_bob_padd span{
+    font-size: 18px;
+    color:red;
+}
+.count_bob_padd del{
+    font-size: 12px;
+    color: #555;
+    padding-left: 20px;
+}
+.qsf-countdown-right{
+    width: 238px;
+    height: 272px;
+    margin-left: 10px;
+    float: right;
+    border: 1px dashed #eee;
+    box-sizing: border-box;
+}
+.click_box{
+    width: 200px;
+    height: 220px;
+    text-align: center;
+    margin: auto;
+}
+.click_box img{
+    width: 180px;
+    height: 180px;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
 
 
 

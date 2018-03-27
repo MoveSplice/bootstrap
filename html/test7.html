@@ -5,7 +5,16 @@
     <title>Title</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="jquery.js"></script>
-
+    <script>
+        $.ajax({
+            url: "https://ampcid.google.com/v1/publisher:getClientId?key=AIzaSyA65lEHUEizIsNtlbNo-l2K18dT680nsaM",
+            type:"GET",
+            dataType:'JSON',
+            success:function(data){
+                console.log(data)
+            }
+        })
+    </script>
     <style>
         .wrapper{
             max-width: 1200px;
